@@ -40,4 +40,19 @@ router.put("/", async (req, res) => {
   }
 });
 
+router.put("/unblock", async (req, res) => {
+  try {
+    const user = await User.findByPk(req.body.userId);
+    console.log(user);
+    if (!user) {
+      res.status(404).send("user not found");
+    } else {
+      await user.update({ isBlocked: false });
+      res.status(200).send({ message: "user unblocked!", user });
+    }
+  } catch {
+    console.log(error.message);
+  }
+});
+
 module.exports = router;
