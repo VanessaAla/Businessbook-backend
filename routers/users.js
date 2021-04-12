@@ -25,4 +25,19 @@ router.get("/", auth, async (req, res) => {
   res.status(200).send({ message: "ok", allUsers });
 });
 
+router.put("/", async (req, res) => {
+  try {
+    const user = await User.findByPk(req.body.userId);
+    console.log(user);
+    if (!user) {
+      res.status(404).send("user not found");
+    } else {
+      await user.update({ isBlocked: true });
+      res.status(200).send({ message: "user blocked!", user });
+    }
+  } catch {
+    console.log(error.message);
+  }
+});
+
 module.exports = router;
