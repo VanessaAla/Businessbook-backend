@@ -38,7 +38,6 @@ app.post("/authorized_post_request", authMiddleWare, (req, res) => {
 
 app.use("/", authRouter);
 app.use("/businesses", businessRouter);
-
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
 });
