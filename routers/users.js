@@ -17,6 +17,10 @@ router.get("/", auth, async (req, res) => {
 
   const allUsers = await User.findAndCountAll({});
 
+  allUsers.rows.forEach((user) => {
+    delete user.dataValues["password"];
+  });
+
   console.log("allUsers: ", allUsers);
   res.status(200).send({ message: "ok", allUsers });
 });
