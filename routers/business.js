@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const auth = require("../auth/middleware");
 const Business = require("../models").business;
+const User = require("../models").user;
 
 const router = new Router();
 
@@ -31,7 +32,7 @@ router.post("/register", auth, async (req, res) => {
     .send({ message: "Business registered", registerBusiness });
 });
 
-router.delete("/:id", auth, async (req, res) => {
+router.delete("/remove/:id", auth, async (req, res) => {
   console.log("id: ", req.params.id);
 
   const isAdmin = true;
@@ -51,7 +52,7 @@ router.delete("/:id", auth, async (req, res) => {
     },
   });
 
-  res.status(200).send({ message: "ok", business });
+  res.status(200).send({ message: "business is deleted", businessId });
 });
 
 module.exports = router;
