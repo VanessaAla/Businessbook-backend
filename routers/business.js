@@ -1,16 +1,12 @@
 const { Router } = require("express");
 const auth = require("../auth/middleware");
 const Business = require("../models").business;
+const User = require("../models").user;
 
 const router = new Router();
 
 router.get("/", async (req, res, next) => {
-  const businessCategory = req.query.category;
-  const businessCity = req.query.city;
-
-  const businesses = await Business.findAll({
-    where: { businessCategory, businessCity },
-  });
+  const businesses = await Business.findAll({});
 
   res.status(200).send({ message: "ok", businesses });
 });
@@ -34,6 +30,29 @@ router.post("/register", auth, async (req, res) => {
   return res
     .status(201)
     .send({ message: "Business registered", registerBusiness });
+});
+
+router.delete("/remove/:id", auth, async (req, res) => {
+  console.log("id: ", req.params.id);
+
+  const isAdmin = true;
+  const businessId = req.params.id;
+
+  const user = await User.findOne({ where: { isAdmin } }); // check your logic here for more admins
+
+  if (user.id !== req.user.id) {
+    return res
+      .status(403)
+      .send({ message: "You are not authorized to update this space" });
+  }
+
+  const business = await Business.destroy({
+    where: {
+      id: businessId,
+    },
+  });
+
+  res.status(200).send({ message: "business is deleted", businessId });
 });
 
 module.exports = router;
