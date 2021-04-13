@@ -25,7 +25,7 @@ router.get("/", auth, async (req, res) => {
   res.status(200).send({ message: "ok", allUsers });
 });
 
-router.put("/", async (req, res) => {
+router.put("/block", async (req, res) => {
   try {
     const user = await User.findByPk(req.body.userId);
     console.log(user);
@@ -35,7 +35,7 @@ router.put("/", async (req, res) => {
       await user.update({ isBlocked: true });
       res.status(200).send({ message: "user blocked!", user });
     }
-  } catch {
+  } catch (error) {
     console.log(error.message);
   }
 });
@@ -50,7 +50,48 @@ router.put("/unblock", async (req, res) => {
       await user.update({ isBlocked: false });
       res.status(200).send({ message: "user unblocked!", user });
     }
-  } catch {
+  } catch (error) {
+    console.log(error.message);
+  }
+});
+
+router.put("/update", auth, async (req, res) => {
+  try {
+    const user = await User.findByPk(req.user.id);
+
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const email = req.body.email;
+    const address = req.body.address;
+    const city = req.body.city;
+    const postalCode = req.body.postalCode;
+
+    console.log("body: ", req.body);
+
+    if (!user) {
+      res.status(404).send("user not found");
+    } else {
+      if (firstName !== "") {
+        await user.update({ firstName });
+      }
+      if (lastName !== "") {
+        await user.update({ lastName });
+      }
+      if (email !== "") {
+        await user.update({ email });
+      }
+      if (address !== "") {
+        await user.update({ address });
+      }
+      if (city !== "") {
+        await user.update({ city });
+      }
+      if (postalCode !== "") {
+        await user.update({ postalCode });
+      }
+      res.status(200).send({ message: "user details updated!", user });
+    }
+  } catch (error) {
     console.log(error.message);
   }
 });
