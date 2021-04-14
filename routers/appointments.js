@@ -13,10 +13,11 @@ router.post("/:id/appointment", auth, async (req, res) => {
     return res.status(400).send({ message: "An appointment must have a date" });
   }
 
-  const Appointment = await Appointment.create({
+  const appointment = await Appointment.create({
     date,
     businessId: req.params.id,
     userId: req.user.id,
+    status: "requested",
   });
 
   return res.status(201).send({ message: "Appointment made", appointment });
