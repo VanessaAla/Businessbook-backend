@@ -45,7 +45,6 @@ router.get("/", auth, async (req, res) => {
     },
   });
 
-  console.log(appointmentList);
   res.status(200).send({ message: "ok", appointmentList });
 });
 

@@ -5,11 +5,9 @@ const User = require("../models").user;
 const router = new Router();
 
 router.get("/", auth, async (req, res) => {
-  const isAdmin = true;
-  //check here the logic for more admin users req.user.isAdmin
-  const user = await User.findOne({ where: { isAdmin } });
+  const { isAdmin } = req.user;
 
-  if (user.id !== req.user.id) {
+  if (!isAdmin) {
     return res
       .status(403)
       .send({ message: "You are not authorized to update this space" });

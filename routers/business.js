@@ -46,12 +46,11 @@ router.post("/register", auth, async (req, res) => {
 router.delete("/remove/:id", auth, async (req, res) => {
   console.log("id: ", req.params.id);
 
-  const isAdmin = true;
+  const { isAdmin } = req.user;
+
   const businessId = req.params.id;
 
-  const user = await User.findOne({ where: { isAdmin } }); // check your logic here for more admins
-
-  if (user.id !== req.user.id) {
+  if (!isAdmin) {
     return res
       .status(403)
       .send({ message: "You are not authorized to update this space" });
