@@ -89,7 +89,12 @@ router.put("/update", auth, async (req, res) => {
       if (postalCode !== "") {
         await user.update({ postalCode });
       }
-      res.status(200).send({ message: "user details updated!", user });
+
+      delete user.dataValues["password"];
+
+      res
+        .status(200)
+        .send({ message: "user details updated!", ...user.dataValues });
     }
   } catch (error) {
     console.log(error.message);
