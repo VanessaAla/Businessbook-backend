@@ -6,6 +6,17 @@ const User = require("../models").user;
 const router = new Router();
 
 router.get("/", async (req, res, next) => {
+  const businessCategory = req.query.category;
+  const businessCity = req.query.city;
+
+  const businesses = await Business.findAll({
+    where: { businessCategory, businessCity },
+  });
+
+  res.status(200).send({ message: "ok", businesses });
+});
+
+router.get("/all", async (req, res, next) => {
   const businesses = await Business.findAll({});
 
   res.status(200).send({ message: "ok", businesses });
