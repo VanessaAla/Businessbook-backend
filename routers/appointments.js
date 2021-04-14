@@ -21,7 +21,14 @@ router.post("/:id/appointment", auth, async (req, res) => {
     status: "requested",
   });
 
-  return res.status(201).send({ message: "Appointment made", appointment });
+  const fetchedAppointment = await Appointment.findOne({
+    include: [Business],
+    where: { id: appointment.id },
+  });
+
+  return res
+    .status(201)
+    .send({ message: "Appointment made", fetchedAppointment });
 });
 
 router.get("/", auth, async (req, res) => {
@@ -31,6 +38,7 @@ router.get("/", auth, async (req, res) => {
     include: [Business],
     order: [["date", "ASC"]],
     where: {
+      userId: req.user.id,
       date: {
         [Op.gte]: req.query.date,
       },
