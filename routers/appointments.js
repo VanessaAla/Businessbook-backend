@@ -3,6 +3,7 @@ const auth = require("../auth/middleware");
 const Appointment = require("../models").appointments;
 const Business = require("../models").business;
 const User = require("../models").user;
+const { Op } = require("sequelize");
 
 const router = new Router();
 
@@ -26,8 +27,8 @@ router.post("/:id/appointment", auth, async (req, res) => {
 router.get("/", auth, async (req, res) => {
   console.log("date: ", req.query.date);
 
-  const appointmentList = await AppointmentList.findAndCountAll({
-    include: [User][Business],
+  const appointmentList = await Appointment.findAndCountAll({
+    include: [Business],
     order: [["date", "ASC"]],
     where: {
       date: {
