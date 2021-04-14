@@ -23,4 +23,21 @@ router.post("/:id/appointment", auth, async (req, res) => {
   return res.status(201).send({ message: "Appointment made", appointment });
 });
 
+router.get("/", auth, async (req, res) => {
+  console.log("date: ", req.query.date);
+
+  const appointmentList = await AppointmentList.findAndCountAll({
+    include: [User][Business],
+    order: [["date", "ASC"]],
+    where: {
+      date: {
+        [Op.gte]: req.query.date,
+      },
+    },
+  });
+
+  console.log(appointmentList);
+  res.status(200).send({ message: "ok", appointmentList });
+});
+
 module.exports = router;
