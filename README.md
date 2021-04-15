@@ -23,11 +23,19 @@ Follow the commands below to clone this repository on your system
 
 5. npm start
 
-# ⏬ Tech Used
+# ⏬ Tech and concepts used
 
+- ReactJS
+- Redux 
 - Express
-
 - REST API
+- Sequelize as ORM
+- One-to-many models
+- Bootstrap 🔥
+
+🔥  New technology learnt during this project
+
+
 
 # Database Model
 
