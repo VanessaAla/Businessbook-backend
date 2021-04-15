@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const auth = require("../auth/middleware");
 const Business = require("../models").business;
-const User = require("../models").user;
+const Appointments = require("../models").appointments;
 
 const router = new Router();
 
@@ -56,7 +56,13 @@ router.delete("/remove/:id", auth, async (req, res) => {
       .send({ message: "You are not authorized to update this space" });
   }
 
-  const business = await Business.destroy({
+  await Appointments.destroy({
+    where: {
+      businessId: businessId,
+    },
+  });
+
+  await Business.destroy({
     where: {
       id: businessId,
     },
