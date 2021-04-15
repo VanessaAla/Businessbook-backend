@@ -40,7 +40,7 @@ The goal of this project is to build fullstack app, by practicing already known 
 - As an Admin user I want to see all the signed up users as well as the businesses.
 - As an Admin user I want to block or unblock users and delete businesses.
 
-I am planning to implement the following user stories:
+🤓 I am planning to implement the following user stories:
 * As a user I want to see the status (requested, pending, declined) of my appointment.
 * As a user that owns a business I want to accept or decline appoitments requested.
 * As a user I want to read and send notifications to the business I am interested to.
