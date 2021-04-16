@@ -9,11 +9,12 @@ As en expat living in the Netherlands I am always looking for businesses to cove
 - ReactJS
 - Redux for state management
 - Authentication
+- Axios
 - Express
    * REST API
 - Sequelize as ORM
 - One-to-many models
-- Bootstrap 🔥
+- React-Bootstrap 🔥
 
 🔥  New technology learnt during this project
 
@@ -45,22 +46,30 @@ The goal of this project is to build fullstack app, by practicing already known 
 * As a user that owns a business I want to accept or decline appoitments requested.
 * As a user I want to read and send notifications to the business I am interested to.
 
-This project is a work in progress. Some features still need to be implemented and revised. Any suggestions or feedback is welcome, please let me know! You can contact me.
+This project is a work in progress. Some features still need to be implemented and revised. Any suggestions or feedback is welcome, please let me know! You can contact me [here](https://www.linkedin.com/in/evangelia-alamani-487647137/).
 
 
 # ⚒ Project details
 
 ## Project Board
 
+Go to [Project board](https://github.com/users/VanessaAla/projects/1)
+
 ## Wireframe
+
+Go to [Wireframe](https://wireframepro.mockflow.com/editor.jsp?editor=on&bgcolor=white&perm=Create&ptitle=My%20Project&category=featured&projectid=M9ad1ad852a3104db6b9b5b3bfb849d631617526151986&publicid=83ff7ff9b34e40de8c460abda2c28707#/page/56b827f523104cf09a79830a5ee018f9)
 
 ## Database Model
 
-Go to https://dbdiagram.io/d/6069a310ecb54e10c33e9b12
+Go to [Database Model](https://dbdiagram.io/d/6069a310ecb54e10c33e9b12)
 
 ## Frontend repo
 
+Go to [Frontend Repo](https://github.com/VanessaAla/businessbook-frontend)
+
 ## Backend repo
+
+Go to [Database Model](https://github.com/VanessaAla/businessbook-backend)
 
 
 
