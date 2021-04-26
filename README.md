@@ -51,10 +51,15 @@ This project is a work in progress. Some features still need to be implemented a
 
 # ⚒ Project details
 
-## Project Board
+## Project Boards
 
-Go to 
-[Backend Project Board](https://github.com/VanessaAla/businessbook-backend/projects/1) [Frontend Project Board](https://github.com/VanessaAla/businessbook-frontend/projects/1)
+Back end:
+[Backend Project Board](https://github.com/VanessaAla/businessbook-backend/projects/1) 
+
+Front end:
+[Frontend Project Board](https://github.com/VanessaAla/businessbook-frontend/projects/1) 
+
+
 
 ## Wireframe
 
