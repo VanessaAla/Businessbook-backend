@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "server": "node server.js",
-    "server-dev": "nodemon server.js",
+    "start": "node index.js",
+    "server": "node index.js",
+    "server-dev": "nodemon index.js",
     "initdev": "npm run migrate && npm run seed",
     "migrate": "npx sequelize-cli db:migrate",
     "seed": "npx sequelize-cli db:seed:all",
