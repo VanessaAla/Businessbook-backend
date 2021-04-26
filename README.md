@@ -53,7 +53,8 @@ This project is a work in progress. Some features still need to be implemented a
 
 ## Project Board
 
-Go to [Project board](https://github.com/users/VanessaAla/projects/1)
+Go to 
+[Backend](https://github.com/VanessaAla/businessbook-backend/projects/1)
 
 ## Wireframe
 
