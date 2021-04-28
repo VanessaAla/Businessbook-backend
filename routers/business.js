@@ -31,6 +31,7 @@ router.post("/register", auth, async (req, res) => {
   const imgURL = req.body.imgURL;
   const registerBusiness = await Business.create({
     businessName,
+    businessEmail,
     businessCategory,
     businessCity,
     businessPostalCode,
