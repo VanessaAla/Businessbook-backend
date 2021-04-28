@@ -25,6 +25,7 @@ module.exports = {
       [
         {
           businessName: "Sanage",
+          businessEmail: "sanage@s.nl",
           businessCategory: "spa",
           businessCity: "Utrecht",
           businessPostalCode: "3931 XE",
@@ -37,6 +38,7 @@ module.exports = {
         },
         {
           businessName: "GardenFolio",
+          businessEmail: "gardenfolio@g.com",
           businessCategory: "gardening",
           businessCity: "Amsterdam",
           businessPostalCode: "1096 BL",
@@ -49,6 +51,7 @@ module.exports = {
         },
         {
           businessName: "Brity",
+          businessEmail: "brity@b.com",
           businessCategory: "cleaning",
           businessCity: "Rotterdam",
           businessPostalCode: "3064 LP",
@@ -61,6 +64,7 @@ module.exports = {
         },
         {
           businessName: "Cookith",
+          businessEmail: "coocith@c.nl",
           businessCategory: "catering",
           businessCity: "Eindhoven",
           businessPostalCode: "5644 TV",
@@ -73,6 +77,7 @@ module.exports = {
         },
         {
           businessName: "pawxy",
+          businessEmail: "pawxy@p.nl",
           businessCategory: "pet sitters",
           businessCity: "Arnhem",
           businessPostalCode: "6843 NC",

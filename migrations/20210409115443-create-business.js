@@ -12,6 +12,11 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      businessEmail: {
+        type: Sequelize.STRING,
+        unique: true,
+        allowNull: false,
+      },
       businessCategory: {
         type: Sequelize.STRING,
         allowNull: false,
