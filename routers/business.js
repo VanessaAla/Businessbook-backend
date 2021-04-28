@@ -24,6 +24,7 @@ router.get("/all", async (req, res, next) => {
 
 router.post("/register", auth, async (req, res) => {
   const businessName = req.body.businessName;
+  const businessEmail = req.body.businessEmail;
   const businessCategory = req.body.businessCategory;
   const businessCity = req.body.businessCity;
   const businessPostalCode = req.body.businessPostalCode;
