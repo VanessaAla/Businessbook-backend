@@ -75,7 +75,7 @@ Go to [Frontend Repo](https://github.com/VanessaAla/businessbook-frontend)
 
 ## Backend repo
 
-Go to [Database Model](https://github.com/VanessaAla/businessbook-backend)
+Go to [Backend Repo](https://github.com/VanessaAla/businessbook-backend)
 
 
 
