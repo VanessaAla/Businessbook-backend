@@ -1,7 +1,14 @@
-# BusinessBook App
+# Welcome to the Businessbook Application
 
-# 👩‍💻 What is this app about:
+This is an App made as part of my final Project as a Student in Codaisseur Coding BootCamp. This is a project made in 9 days from scratch using no templates or previous code.
+
+# 👩‍💻 The idea behind this app:
+
 As en expat living in the Netherlands I am always looking for businesses to cover my needs. I came up with this app to make the process of the search easier. This app is a place where a user can sign up search for a business, book an appointment with the business as well as register their own business (if they own one).
+
+# 📹 App Quick Overview
+
+![alt-text](https://media.giphy.com/media/eId6M8EZDLkcIwV6lS/giphy.gif)
 
 
 # ⏬ Tech and concepts used
